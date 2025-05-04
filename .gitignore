@@ -52,3 +52,4 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+.vs/simple_gRPC/FileContentIndex/26b46fce-b23f-481a-9956-df705ac9bf47.vsidx

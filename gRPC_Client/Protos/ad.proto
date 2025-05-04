@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ad.V1";
+package ad;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service AdService {
+    rpc CreateAd (CreateAdRequest) returns (AdResponse);
+    rpc GetAd (GetAdRequest) returns (AdResponse);
+    rpc UpdateAd (UpdateAdRequest) returns (AdResponse);
+    rpc DeleteAd (DeleteAdRequest) returns (google.protobuf.Empty);
+    rpc ListAds (google.protobuf.Empty) returns (ListAdsResponse);
+}
+
+message CreateAdRequest {
+    string title = 1;
+    int32 production_id = 2;
+    string text = 3;
+}
+
+message GetAdRequest {
+    int32 id = 1;
+}
+
+message UpdateAdRequest {
+    int32 id = 1;
+    string title = 2;
+    int32 production_id = 3;
+    string text = 4;
+}
+
+message DeleteAdRequest {
+    int32 id = 1;
+}
+
+message AdResponse {
+    int32 id = 1;
+    string title = 2;
+    int32 production_id = 3;
+    google.protobuf.Timestamp create_date = 4;
+    string text = 5;
+    ProductionResponse production = 6;
+}
+
+message ProductionResponse {
+    int32 id = 1;
+    int32 count = 2;
+    string title = 3;
+    int32 production_type_id = 4;
+    google.protobuf.Timestamp create_date = 5;
+    string comment = 6;
+}
+
+message ListAdsResponse {
+    repeated AdResponse ads = 1;
+}
