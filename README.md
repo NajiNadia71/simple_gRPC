@@ -68,13 +68,16 @@ for the Client
 -------------------------------
 gRPC Client that communicates with the server,this is a Console Project and needs
 
+
 dotnet add package Grpc.Net.Client
+
+
 dotnet add package Google.Protobuf
+
+
 dotnet add package Grpc.Tools
+
+
 Just would Call the API and see the reponse for one.
 dotnet run
-
-
-Protocol Buffers
------------------------------
 
