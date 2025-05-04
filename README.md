@@ -29,6 +29,8 @@ The .proto file defines:
    Protobuf messages that ensure structured, typed, and efficient communication.
    Integration with C# using option csharp_namespace.
    Timestamps and Empty types via imports for clean API design.
+
+   
 -----------------------------------Def for proto ----------------------------------------------------
 
 [ad.proto](gRPC_Server/Protos/ad.proto)
