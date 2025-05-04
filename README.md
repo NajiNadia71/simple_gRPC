@@ -2,7 +2,9 @@ gRPC is a high-performance, open-source Remote Procedure Call (RPC) framework th
 
 In gRPC, a client application can directly call a method on a server application on a different machine as if it were a local object, making it easier for you to create distributed applications and services. As in many RPC systems, gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types. On the server side, the server implements this interface and runs a gRPC server to handle client calls. On the client side, the client has a stub (referred to as just a client in some languages) that provides the same methods as the server.
 [https://grpc.io/docs/]
--------------------------------
+
+
+
 Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured data.
 
 It’s like JSON, except it’s smaller and faster, and it generates native language bindings. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
