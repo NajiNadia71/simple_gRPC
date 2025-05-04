@@ -103,3 +103,5 @@ dotnet add package Grpc.Tools
 Just would Call the API and see the reponse for one.
 dotnet run
 
+
+Important : Both Client and Server has this ad.proto file BC they need to Comunicate base on this File
