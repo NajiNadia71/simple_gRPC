@@ -19,15 +19,27 @@ are created for learning how dose gRPC work and Make a connection to understand 
 
 SO for the Server 
 -------------------------------
-gRPC Server, hosts services.
+gRPC Server, hosts services. 
+
+
 dotnet add package Grpc.AspNetCore
+
+
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+
 in gRPC server there is a Folder Named Protos 
 
+
+
 The .proto file defines:
+
    A complete CRUD interface (CreateAd, GetAd, UpdateAd, DeleteAd) for ads.
+   
    Protobuf messages that ensure structured, typed, and efficient communication.
+   
    Integration with C# using option csharp_namespace.
+   
    Timestamps and Empty types via imports for clean API design.
 
    
@@ -39,31 +51,41 @@ In this File, here are the Important Parts:
 
 
 service AdService {
+
     rpc CreateAd (CreateAdRequest) returns (AdResponse);
     rpc GetAd (GetAdRequest) returns (AdResponse);
     rpc UpdateAd (UpdateAdRequest) returns (AdResponse);
     rpc DeleteAd (DeleteAdRequest) returns (google.protobuf.Empty);
     rpc ListAds (google.protobuf.Empty) returns (ListAdsResponse);
-}
-This declares a gRPC service named AdService with 5 methods for CRUD:
 
+}
+
+
+This declares a gRPC service named AdService with 5 methods for CRUD:
 
 message CreateAdRequest {
     string title = 1;
     int32 production_id = 2;
     string text = 3;
 }
-Sent when creating an ad. Includes a title, associated production_id, and the ad text.
 
+
+Sent when creating an ad. Includes a title, associated production_id, and the ad text.
 
 
 message GetAdRequest {
     int32 id = 1;
 }
+
+
 Sent to fetch a single ad by its ID.
 
 Other parts are same justified for other services 
+
+
 dotnet run
+
+
 for the Client 
 -------------------------------
 gRPC Client that communicates with the server,this is a Console Project and needs
